@@ -158,5 +158,61 @@ def ternary
   puts age < 10 ? "You are not allowed here" : "Welcome to the Black Company."
 end
 
-def case
+def cases
+  fruit = "orange"
+  color =
+    case fruit
+    when "orange"
+      "Orange"
+    when "apple"
+      "Green"
+    else
+      "unknown"
+    end
 end
+
+p cases
+
+x = [1, 2, 3]
+x.each { puts _1 }
+
+def masaa
+  p Time.now
+  p Time.now - 10
+  p Time.now + 34_234
+=begin 
+  class Integer
+    def seconds
+      self
+    end
+    def minutes
+      self * 60
+    end
+    def hours
+      self * 3600
+    end
+    def days
+      self * 24 * 3600
+    end
+  end
+  
+  puts Time.now
+  puts Time.now + 10.minutes
+  puts Time.now + 12.hours
+  puts Time.now + 7.days
+
+=end
+end
+
+# masaa
+def ranges
+  p ("A".."Z").to_a
+  p ("M".."X").to_a
+  p (1..10).to_a
+
+  x = ("M".."X").to_a
+  x[3..5] = (1..7).to_a
+  p x
+end
+
+
