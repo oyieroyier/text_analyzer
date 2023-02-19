@@ -171,10 +171,10 @@ def cases
     end
 end
 
-p cases
+# p cases
 
 x = [1, 2, 3]
-x.each { puts _1 }
+# x.each { puts _1 }
 
 def masaa
   p Time.now
@@ -215,4 +215,131 @@ def ranges
   p x
 end
 
+=begin name = Object.new
 
+def name.sayHi
+  puts "This is a message from the sayHi method!"
+end
+
+def name.talk
+  puts "And this is a message from the talk method!"
+end
+
+name.sayHi
+
+puts name
+
+p name.respond_to?("talk")
+p name.respond_to?("sayHi")
+
+
+if name.respond_to?("talk")
+  puts "Name responds to talk!"
+  puts name.talk
+else
+  puts name.sayHi
+end
+
+request = gets.strip
+
+puts request
+=end
+
+ticket = Object.new
+# puts ticket
+
+def ticket.venue
+  puts "Venue: Nairobi Planetarium."
+end
+def ticket.prices
+  puts <<-prices
+
+  Regular: $10,
+  VIP: $20,
+  VVIP: $30,
+  Super VIP: $40,
+  Golden Circle: $50
+  prices
+end
+def ticket.performers
+  puts <<-performers
+  Main Act: Captain Charisma
+  Supporting Act: Brandy, Vic West, Savara, Fathermoh
+  MCs: Vinnie Baite
+
+  performers
+end
+
+def using_the_send_method
+  print "Make your request here: "
+  request = gets.strip
+  if ticket.respond_to?(request)
+    puts ticket.send(request)
+  else
+    puts "No such information exists!"
+  end
+end
+
+def multi_args(*x)
+  puts "I can take any number of arguments!"
+  p x
+end
+
+# multi_args(1, 2, 3, 4, 5, 6, 7, 8)
+# multi_args
+# multi_args("A", "B", "C", "D", "E", "F")
+
+def argzz(a, b, c, *d)
+  print a, b, c, d
+end
+
+# argzz(1, 2, 3, 4, 5, 6, 7)
+
+# puts "\n"
+
+def replace_freeze_dup_clone
+  str = "Hello"
+  abc = str.replace("This string has been changed from abc.")
+
+  puts abc
+  puts str
+
+  int = 1
+  ghi = int
+
+  puts int
+  puts ghi
+
+  num = nil
+  number = nil
+  nambari = nil
+
+  puts num.object_id
+  puts number.object_id
+  puts nambari.object_id
+
+  def change_string(str)
+    str.replace("New string content.")
+  end
+
+  s = "Hello, my name is Bob."
+  change_string(s.clone)
+  puts s
+end
+
+str = "robot".freeze.clone
+name = "Bobby".freeze.dup
+
+name2 = name.replace("Not a Robot")
+puts name2
+
+# str2 = str.replace("Not a Robot")
+# puts str2
+
+numbers = ["one", "two", "three", "four", "five", "six"].freeze
+
+p numbers
+
+numbers[2].replace("seven")
+
+p numbers
