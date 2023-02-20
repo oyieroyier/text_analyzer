@@ -342,4 +342,10 @@ p numbers
 
 numbers[2].replace("seven")
 
-p numbers
+p numbers.class
+
+class Test
+  
+end
+
+puts Test.class
